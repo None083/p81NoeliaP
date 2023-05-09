@@ -34,7 +34,7 @@ public class FacturaDAO implements IDAO {
         // ya que no necesitamos parametrizar la sentencia SQL
         try (Statement st = con.createStatement()) {
             // Ejecutamos la sentencia y obtenemos las filas en el objeto ResultSet
-            ResultSet res = st.executeQuery("select * from persona");
+            ResultSet res = st.executeQuery("select * from factura");
             // Ahora construimos la lista, recorriendo el ResultSet y mapeando los datos
             while (res.next()) {
                 Factura f = new Factura();
@@ -86,7 +86,7 @@ public class FacturaDAO implements IDAO {
     public int insertFactura(Factura f) throws SQLException {
 
         int numFilas = 0;
-        String sql = "insert into persona values (?,?,?,?)";
+        String sql = "insert into factura values (?,?,?,?)";
 
         if (findByCodigo(f.getCodigo()) != null) {
             // Existe un registro con ese código
