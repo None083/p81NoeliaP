@@ -34,7 +34,7 @@ public class FacturaDAO implements IDAO {
         // ya que no necesitamos parametrizar la sentencia SQL
         try (Statement st = con.createStatement()) {
             // Ejecutamos la sentencia y obtenemos las filas en el objeto ResultSet
-            ResultSet res = st.executeQuery("select * from factura");
+            ResultSet res = st.executeQuery("select * from p81noeliap.factura");
             // Ahora construimos la lista, recorriendo el ResultSet y mapeando los datos
             while (res.next()) {
                 Factura f = new Factura();
@@ -58,7 +58,7 @@ public class FacturaDAO implements IDAO {
         ResultSet res = null;
         Factura f = new Factura();
 
-        String sql = "select * from factura where codigo=?";
+        String sql = "select * from p81noeliap.factura where codigo=?";
 
         try (PreparedStatement prest = con.prepareStatement(sql)) {
             // Preparamos la sentencia parametrizada
@@ -86,7 +86,7 @@ public class FacturaDAO implements IDAO {
     public int insertFactura(Factura f) throws SQLException {
 
         int numFilas = 0;
-        String sql = "insert into factura values (?,?,?,?)";
+        String sql = "insert into p81noeliap.factura values (?,?,?,?)";
 
         if (findByCodigo(f.getCodigo()) != null) {
             // Existe un registro con ese código
@@ -124,7 +124,7 @@ public class FacturaDAO implements IDAO {
     @Override
     public int deleteTabla() throws SQLException {
 
-        String sql = "delete from factura";
+        String sql = "delete from p81noeliap.factura";
 
         int nfilas = 0;
 
@@ -144,7 +144,7 @@ public class FacturaDAO implements IDAO {
     public int deleteFactura(Factura f) throws SQLException {
         int numFilas = 0;
 
-        String sql = "delete from factura where codigo = ?";
+        String sql = "delete from p81noeliap.factura where codigo = ?";
 
         // Sentencia parametrizada
         try (PreparedStatement prest = con.prepareStatement(sql)) {
@@ -161,7 +161,7 @@ public class FacturaDAO implements IDAO {
     public int updateFactura(String codigo, Factura nuevosDatos) throws SQLException {
 
         int numFilas = 0;
-        String sql = "update factura set fechaEmision = ?, descripcion = ?, totalImporte = ? where codigo = ?";
+        String sql = "update p81noeliap.factura set fechaEmision = ?, descripcion = ?, totalImporte = ? where codigo = ?";
 
         if (findByCodigo(codigo) == null) {
             // La factura a actualizar no existe

@@ -29,6 +29,7 @@ public class Main {
         for (Factura f : listaFacturas) {
             System.out.println(f);
         }
+        
         System.out.println("---------------------Borro la factura 1-------------------------------");
         
         facturaDao.deleteFactura(new Factura("1", LocalDate.MIN, "", 0));
@@ -43,7 +44,7 @@ public class Main {
         
         System.out.println(facturaDao.findByCodigo("3"));
         
-        System.out.println("--------------------------Inserto una nueva factura----------------------------");
+        System.out.println("----------------------Inserto una nueva factura nº100----------------------------");
 
         facturaDao.insertFactura(new Factura("100", LocalDate.now(), "holi", 813));
         
@@ -53,7 +54,7 @@ public class Main {
             System.out.println(f);
         }
         
-        System.out.println("------------------Actualizo datos de una factura-------------------------");
+        System.out.println("----------------Actualizo datos de la factura 2-------------------------");
         
         facturaDao.updateFactura("2", new Factura("89", LocalDate.now(), "cositas", 38));
         
@@ -63,9 +64,9 @@ public class Main {
             System.out.println(f);
         }
         
-        System.out.println("---------------Borro todos los datos de la tabla----------------------");
-        
-        System.out.println("Número de filas borradas: " + facturaDao.deleteTabla());
+//        System.out.println("---------------Borro todos los datos de la tabla----------------------");
+//        
+//        System.out.println("Número de filas borradas: " + facturaDao.deleteTabla());
         
     }
 

@@ -1,5 +1,5 @@
-create database p81NoeliaP;
-use p81NoeliaP;
+create database p81noeliap;
+use p81noeliap;
 
 DROP TABLE IF EXISTS factura;
 

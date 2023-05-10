@@ -11,9 +11,14 @@ import java.sql.SQLException;
 
 public class Conexion {
 
-    private static final String SERVIDOR = "jdbc:mysql://localhost:3306/";
-    private static final String NOMBRE_BASE_DATOS = "p81noeliap?zeroDateTimeBehavior=CONVERT_TO_NULL";
-    private static final String USER = "root";
+//    private static final String SERVIDOR = "jdbc:mysql://localhost:3306/";
+//    private static final String NOMBRE_BASE_DATOS = "p81noeliap?zeroDateTimeBehavior=CONVERT_TO_NULL";
+//    private static final String USER = "root";
+//    private static final String PASS = "8313";
+    
+    private static final String SERVIDOR = "jdbc:mysql://192.168.56.101/";
+    private static final String NOMBRE_BASE_DATOS = "p81noeliap";
+    private static final String USER = "noelia";
     private static final String PASS = "8313";
 
     private static Connection instancia = null;
